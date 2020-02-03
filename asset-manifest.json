@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/elizabethsn7/meetup-two.git/static/css/main.d1b05096.chunk.css",
+    "main.js": "/elizabethsn7/meetup-two.git/static/js/main.1300ffda.chunk.js",
+    "main.js.map": "/elizabethsn7/meetup-two.git/static/js/main.1300ffda.chunk.js.map",
+    "runtime-main.js": "/elizabethsn7/meetup-two.git/static/js/runtime-main.ac788f2c.js",
+    "runtime-main.js.map": "/elizabethsn7/meetup-two.git/static/js/runtime-main.ac788f2c.js.map",
+    "static/js/2.13a72663.chunk.js": "/elizabethsn7/meetup-two.git/static/js/2.13a72663.chunk.js",
+    "static/js/2.13a72663.chunk.js.map": "/elizabethsn7/meetup-two.git/static/js/2.13a72663.chunk.js.map",
+    "index.html": "/elizabethsn7/meetup-two.git/index.html",
+    "precache-manifest.ae51bc378ce3bcefac4eadd82bef3d80.js": "/elizabethsn7/meetup-two.git/precache-manifest.ae51bc378ce3bcefac4eadd82bef3d80.js",
+    "service-worker.js": "/elizabethsn7/meetup-two.git/service-worker.js",
+    "static/css/main.d1b05096.chunk.css.map": "/elizabethsn7/meetup-two.git/static/css/main.d1b05096.chunk.css.map",
+    "static/js/2.13a72663.chunk.js.LICENSE.txt": "/elizabethsn7/meetup-two.git/static/js/2.13a72663.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/elizabethsn7/meetup-two.git/static/media/logo.5d5d9eef.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ac788f2c.js",
+    "static/js/2.13a72663.chunk.js",
+    "static/css/main.d1b05096.chunk.css",
+    "static/js/main.1300ffda.chunk.js"
+  ]
+}
