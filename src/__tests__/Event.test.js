@@ -74,6 +74,6 @@ describe('<Event /> component', () => {
         timezone: 'US/Central'
       }
     });
-    console.log(EventWrapper.state('event'));
+    // console.log(EventWrapper.state('event'));
   });
 });
