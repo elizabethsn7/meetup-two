@@ -21,7 +21,9 @@ async function getSuggestions(query) {
     }
   ];
 }
+
 async function getEvents(lat, lon) {
   return mockEvents.events;
 }
+
 export { getSuggestions, getEvents };
