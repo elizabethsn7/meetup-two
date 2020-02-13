@@ -15,18 +15,24 @@ class Event extends Component {
     return (
       <div className="event">
         <div className="detailsOverview">
-          <p className="eventName">Event Name: {this.props.event.name}</p>
           <p className="date">Date: {this.props.event.local_date}</p>
+          <p className="time">Time: {this.props.event.local_time}</p>
+          <p className="name">Event Name: {this.props.event.name}</p>
+          <p className="group-name">
+            Group Name: {this.props.event.group.name}
+          </p>
           <p className="attendeeNumber">
             Number Attending: {this.props.event.yes_rsvp_count}
           </p>
-          <button onClick={() => this.handleShowDetails()}>More Details</button>
+          <button
+            className="details-btn"
+            onClick={() => this.handleShowDetails()}>
+            More Details
+          </button>
         </div>
         {showDetails && (
           <div className="expandedDetails">
-            <p className="expandedDetails-description">
-              {this.props.event.description}
-            </p>
+            <p className="description">{this.props.event.description}</p>
           </div>
         )}
       </div>
