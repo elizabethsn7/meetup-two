@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 import App from '../App';
 import EventList from '../EventList';
+import Event from '../Event';
 import CitySearch from '../CitySearch';
 import NumberOfEvents from '../NumberOfEvents';
 import { mockEvents } from '../mock-events';
@@ -25,7 +26,6 @@ describe('<App /> component', () => {
   });
 });
 
-// Integration
 describe('<App /> integration', () => {
   test('get list of events after user selects a city', async () => {
     const AppWrapper = mount(<App />);
@@ -50,7 +50,7 @@ describe('<App /> integration', () => {
     AppWrapper.setState({
       events: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }]
     });
-    expect(AppWrapper.find('.event')).toHaveLength(5);
+    expect(AppWrapper.find('.event')).toHaveLength(4);
     AppWrapper.unmount();
   });
 });

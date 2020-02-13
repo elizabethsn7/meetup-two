@@ -1,7 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import App from '../App';
-import EventList from '../EventList';
+
 import Event from '../Event';
 
 describe('<Event /> component', () => {
@@ -18,27 +17,23 @@ describe('<Event /> component', () => {
     expect(EventWrapper.find('.event')).toHaveLength(1);
   });
 
-  test('test collapsedDetails exist ', () => {
-    expect(EventWrapper.find('.collapsedDetails').children()).toHaveLength(5);
+  test('test detailsOverview exist ', () => {
+    expect(EventWrapper.find('.detailsOverview').children()).toHaveLength(4);
   });
 
-  test('render collapsedDetails', () => {
+  test('render detailsOverview', () => {
     EventWrapper.setState({
       showDetails: true
     });
     expect(EventWrapper.find('.expandedDetails-description')).toHaveLength(1);
   });
 
-  test('render more details button', () => {
-    expect(EventWrapper.find('.collapsedDetails button')).toHaveLength(1);
-  });
-
   test('clicking on button will show details', () => {
     EventWrapper.setState({
       showDetails: false
     });
-    EventWrapper.find('.collapsedDetails button').simulate('click');
-    expect(EventWrapper.state('showDetails')).toBe(true);
+    EventWrapper.find('.detailsOverview button').simulate('click');
+    expect(EventWrapper.props('showDetails')).toBe(true);
   });
 
   test('render event mock data as state', () => {
