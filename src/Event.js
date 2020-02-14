@@ -13,7 +13,7 @@ class Event extends Component {
   render() {
     const showDetails = this.state.showDetails;
     return (
-      <div className="event">
+      <div className="Event">
         <div className="detailsOverview">
           <p className="date">Date: {this.props.event.local_date}</p>
           <p className="time">Time: {this.props.event.local_time}</p>
