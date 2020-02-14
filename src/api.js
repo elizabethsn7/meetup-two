@@ -10,7 +10,7 @@ async function getAccessToken() {
 
     if (!code) {
       window.location.href =
-        'https://secure.meetup.com/oauth2/authorize?client_id=3jsm2toi92h8a08o038b2o1hh1&response_type=code&redirect_uri=https://elizabethsn7.github.io/meetup/';
+        'https://secure.meetup.com/oauth2/authorize?client_id=3jsm2toi92h8a08o038b2o1hh1&response_type=code&redirect_uri=https://elizabethsn7.github.io/meetup-two/';
       return null;
     }
     return getOrRenewAccessToken('get', code);
@@ -52,7 +52,7 @@ async function getOrRenewAccessToken(type, key) {
 }
 
 async function getSuggestions(query) {
-  if (window.location.href.startsWith('http://localhosr')) {
+  if (window.location.href.startsWith('http://localhost')) {
     return [
       {
         city: 'Munich',
