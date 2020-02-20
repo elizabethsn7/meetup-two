@@ -2,12 +2,15 @@ import React, { Component } from 'react';
 
 class Event extends Component {
   state = {
-    event: [],
     showDetails: false
   };
 
   handleShowDetails = () => {
-    this.setState({ showDetails: true });
+    if (this.state.showDetails === false) {
+      this.setState({ showDetails: true });
+    } else {
+      this.setState({ showDetails: false });
+    }
   };
 
   render() {
