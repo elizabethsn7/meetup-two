@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "077f45df4e887b59cf4b6d3ba36a3f69",
+    "revision": "dc4dfa440e25807c264a7037e9c355b6",
     "url": "/meetup-two/index.html"
   },
   {
-    "revision": "6222d697747b3aa217eb",
+    "revision": "40bb63dccca4214a8bc6",
     "url": "/meetup-two/static/css/main.4c9182a4.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/meetup-two/static/js/2.cac08c2e.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "6222d697747b3aa217eb",
-    "url": "/meetup-two/static/js/main.78c5e636.chunk.js"
+    "revision": "40bb63dccca4214a8bc6",
+    "url": "/meetup-two/static/js/main.f52a252e.chunk.js"
   },
   {
     "revision": "a21a790d9115074b6096",
