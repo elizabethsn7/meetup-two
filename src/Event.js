@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Event extends Component {
   state = {
-    event: {},
+    event: [],
     showDetails: false
   };
 
@@ -13,19 +13,23 @@ class Event extends Component {
   render() {
     const showDetails = this.state.showDetails;
     return (
-      <div className="event">
-        <div className="collapsedDetails">
-          <p className="eventName">{this.state.event.name}</p>
-          <p className="date">{this.state.event.local_date}</p>
-          <p className="localTime">{this.state.event.local_time}</p>
-          <p className="attendeeNumber">{this.state.event.yes_rsvp_count}</p>
-          <button onClick={() => this.handleShowDetails()}>More Details</button>
+      <div className="Event">
+        <div className="detailsOverview">
+          <p className="date">Date: {this.props.event.local_date}</p>
+          <p className="time">Time: {this.props.event.local_time}</p>
+          <p className="name">Event Name: {this.props.event.name}</p>
+          <p className="attendeeNumber">
+            Number Attending: {this.props.event.yes_rsvp_count}
+          </p>
+          <button
+            className="details-btn"
+            onClick={() => this.handleShowDetails()}>
+            More Details
+          </button>
         </div>
         {showDetails && (
           <div className="expandedDetails">
-            <p className="expandedDetails-description">
-              {this.state.event.description}
-            </p>
+            <p className="description">{this.props.event.description}</p>
           </div>
         )}
       </div>

@@ -8,7 +8,7 @@ module.exports.getAccessToken = async event => {
     '?client_id=3jsm2toi92h8a08o038b2o1hh1' +
     '&client_secret=1s374a8lnj6eefv6v8u8ssllln' +
     '&grant_type=authorization_code' +
-    '&redirect_uri=https://elizabethsn7.github.io/meetup/' +
+    '&redirect_uri=https://elizabethsn7.github.io/meetup-two/' +
     '&code=' +
     event.pathParameters.code;
 
@@ -17,6 +17,7 @@ module.exports.getAccessToken = async event => {
   return {
     statusCode: 200,
     headers: {
+      'Content-Type': 'application/json',
       'Access-Control-Allow-Origin': '*'
     },
     body: JSON.stringify({
@@ -40,6 +41,7 @@ module.exports.refreshAccessToken = async event => {
   return {
     statusCode: 200,
     headers: {
+      'Content-Type': 'application/json',
       'Access-Control-Allow-Origin': '*'
     },
     body: JSON.stringify({

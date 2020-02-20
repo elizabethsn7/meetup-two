@@ -3,16 +3,13 @@ import { shallow } from 'enzyme';
 import EventList from '../EventList';
 import Event from '../Event';
 
-describe('<EventList /> component', () => {
-  let EventListWrapper;
-  beforeAll(() => {
-    EventListWrapper = shallow(<EventList />);
-  });
-
+describe('<EventList', () => {
   test('render correct number of events', () => {
-    EventListWrapper.setState({
-      events: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }]
-    });
-    expect(EventListWrapper.find(Event)).toHaveLength(4);
+    const EventListWrapper = shallow(
+      <EventList
+        events={[{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }, { id: 5 }]}
+      />
+    );
+    expect(EventListWrapper.find(Event)).toHaveLength(5);
   });
 });
