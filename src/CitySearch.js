@@ -8,6 +8,7 @@ class CitySearch extends Component {
   };
 
   handleInputChanged = event => {
+    event.preventDefault();
     const value = event.target.value;
     this.setState({ query: value });
     getSuggestions(value)

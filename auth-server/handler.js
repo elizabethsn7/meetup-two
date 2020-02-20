@@ -17,7 +17,8 @@ module.exports.getAccessToken = async event => {
   return {
     statusCode: 200,
     headers: {
-      'Access-Control-Allow-Origin': '*'
+      'Access-Control-Allow-Origin':
+        'https://elizabethsn7.github.io/meetup-two/'
     },
     body: JSON.stringify({
       access_token: info.data.access_token,
