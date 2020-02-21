@@ -27,6 +27,20 @@ describe('<CitySearch /> component', () => {
     expect(CitySearchWrapper.state('query')).toBe('Berlin');
   });
 
+  test('render list of suggestions correctly', () => {
+    const suggestions = CitySearchWrapper.state('suggestions');
+    expect(CitySearchWrapper.find('.suggestions li')).toHaveLength(
+      suggestions.length
+    );
+    for (let i = 0; i < suggestions.length; i += 1) {
+      expect(
+        CitySearchWrapper.find('.suggestions li')
+          .at(i)
+          .text()
+      ).toBe(suggestions[i].name_string);
+    }
+  });
+
   test('click on suggestion should change query state and empty the list of suggestions', () => {
     CitySearchWrapper.setState({
       suggestions: [

@@ -27,7 +27,7 @@
         const codeValue = codeElement.value;
 
         const lambdaURL =
-          'https://fesvq75t1d.execute-api.us-west-1.amazonaws.com/dev/api/token/{code}' +
+          'https://8f80bb691h.execute-api.us-west-2.amazonaws.com/dev/api/token/{code}' +
           codeValue;
 
         fetch(lambdaURL)
@@ -47,7 +47,7 @@
         const refreshCodeValue = refreshCodeElement.value;
 
         const lambdaRefresh =
-          'https://fesvq75t1d.execute-api.us-west-1.amazonaws.com/dev/api/refreshtoken/{refresh_token}' +
+          'https://8f80bb691h.execute-api.us-west-2.amazonaws.com/dev/api/refreshtoken/{refresh_token}' +
           refreshCodeValue;
 
         fetch(lambdaRefresh)

@@ -86,12 +86,12 @@ async function getOrRenewAccessToken(type, key) {
   if (type === 'get') {
     // Lambda endpoint to get token by code
     url =
-      'https://fesvq75t1d.execute-api.us-west-1.amazonaws.com/dev/api/token/{code}' +
+      'https://8f80bb691h.execute-api.us-west-2.amazonaws.com/dev/api/token/' +
       key;
   } else if (type === 'renew') {
     // Lambda endpoint to get token by refresh_token
     url =
-      'https://fesvq75t1d.execute-api.us-west-1.amazonaws.com/dev/api/refreshtoken/{refresh_token}' +
+      'https://8f80bb691h.execute-api.us-west-2.amazonaws.com/dev/api/refreshtoken/' +
       key;
   }
 

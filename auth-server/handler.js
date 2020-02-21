@@ -5,7 +5,6 @@ exports.handler = function(event, context) {
   var response = {
     statusCode: responseCode,
     headers: {
-      'x-custom-header': 'my custom header value',
       'Access-Control-Allow-Origin': '*'
     },
     body: JSON.stringify(event)

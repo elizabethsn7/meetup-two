@@ -7,7 +7,9 @@ import { getEvents } from './api';
 
 class App extends Component {
   state = {
-    events: []
+    events: [],
+    lat: null,
+    lon: null
   };
 
   updateEvents = (lat, lon) => {
@@ -17,7 +19,6 @@ class App extends Component {
     return (
       <div className="App">
         <CitySearch updateEvents={this.updateEvents} />
-        <EventList events={this.state.events} />
         <NumberOfEvents />
         <EventList events={this.state.events} />
       </div>
