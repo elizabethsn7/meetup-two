@@ -23,7 +23,7 @@ service: auth-server
 provider:
   name: aws
   runtime: nodejs12.x
-  region: us-west-2
+  region: us-west-1
   timeout: 60
 
 functions:
@@ -39,5 +39,3 @@ functions:
       - http:
           path: api/refreshtoken/{refresh_token}
           method: get
-# https://secure.meetup.com/oauth2/authorize?client_id=3jsm2toi92h8a08o038b2o1hh1&response_type=code&redirect_uri=https://elizabethsn7.github.io/meetup-two/
-

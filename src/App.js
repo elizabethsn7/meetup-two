@@ -13,13 +13,13 @@ class App extends Component {
   updateEvents = (lat, lon) => {
     getEvents(lat, lon).then(events => this.setState({ events }));
   };
-
   render() {
     return (
       <div className="App">
         <CitySearch updateEvents={this.updateEvents} />
         <EventList events={this.state.events} />
         <NumberOfEvents />
+        <EventList events={this.state.events} />
       </div>
     );
   }
