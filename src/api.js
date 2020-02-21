@@ -42,19 +42,19 @@ async function getSuggestions(query) {
 async function getEvents(lat, lon) {
   if (window.location.href.startsWith('http://localhost')) {
     return mockEvents.events;
-    const token = await getAccessToken();
-    if (token) {
-      let url =
-        'https://api.meetup.com/find/upcoming_events?&sign=true&photo-host=public' +
-        '&access_token=' +
-        token;
-      // lat, lon is optional; if you have a lat and lon, you can add them
-      if (lat && lon) {
-        url += '&lat=' + lat + '&lon=' + lon;
-      }
-      const result = await axios.get(url);
-      return result.data.events;
+  }
+  const token = await getAccessToken();
+  if (token) {
+    let url =
+      'https://api.meetup.com/find/upcoming_events?&sign=true&photo-host=public' +
+      '&access_token=' +
+      token;
+    // lat, lon is optional; if you have a lat and lon, you can add them
+    if (lat && lon) {
+      url += '&lat=' + lat + '&lon=' + lon;
     }
+    const result = await axios.get(url);
+    return result.data.events;
   }
 }
 
@@ -86,12 +86,12 @@ async function getOrRenewAccessToken(type, key) {
   if (type === 'get') {
     // Lambda endpoint to get token by code
     url =
-      'https://fesvq75t1d.execute-api.us-west-1.amazonaws.com/dev/api/token/' +
+      'https://fesvq75t1d.execute-api.us-west-1.amazonaws.com/dev/api/token/{code}' +
       key;
   } else if (type === 'renew') {
     // Lambda endpoint to get token by refresh_token
     url =
-      'https://fesvq75t1d.execute-api.us-west-1.amazonaws.com/dev/api/refreshtoken/' +
+      'https://fesvq75t1d.execute-api.us-west-1.amazonaws.com/dev/api/refreshtoken/{refresh_token}' +
       key;
   }
 

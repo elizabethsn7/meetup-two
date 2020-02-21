@@ -1,4 +1,18 @@
 'use strict';
+exports.handler = function(event, context) {
+  var responseCode = 200;
+
+  var response = {
+    statusCode: responseCode,
+    headers: {
+      'x-custom-header': 'my custom header value',
+      'Access-Control-Allow-Origin': '*'
+    },
+    body: JSON.stringify(event)
+  };
+
+  context.succeed(response);
+};
 
 const axios = require('axios');
 
