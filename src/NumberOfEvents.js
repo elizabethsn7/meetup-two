@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class NumberOfEvents extends Component {
   state = {
-    amount: '10'
+    amount: 10
   };
 
   handleInputChanged = event => {
