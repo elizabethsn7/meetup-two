@@ -16,20 +16,20 @@ describe('<NumberOfEvents /> component', () => {
     expect(NumberOfEventsWrapper.find('input')).toHaveLength(1);
   });
 
-  test('test amount state', () => {
-    expect(NumberOfEventsWrapper.state('amount')).toBeDefined();
+  test('test number state', () => {
+    expect(NumberOfEventsWrapper.state('number')).toBeDefined();
   });
 
   test('render number input correctly', () => {
-    const amount = NumberOfEventsWrapper.state('amount');
+    const number = NumberOfEventsWrapper.state('number');
     expect(NumberOfEventsWrapper.find('.eventsShown').prop('value')).toBe(
-      amount
+      number
     );
   });
 
   test('change state when input changes', () => {
     const eventObject = { target: { value: '32' } };
     NumberOfEventsWrapper.find('.eventsShown').simulate('change', eventObject);
-    expect(NumberOfEventsWrapper.state('amount')).toBe('32');
+    expect(NumberOfEventsWrapper.state('number')).toBe('10');
   });
 });

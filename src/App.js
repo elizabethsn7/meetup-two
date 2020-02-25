@@ -4,7 +4,7 @@ import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import { getEvents } from './api';
-import Event from './Event';
+import Navbar from 'react-bootstrap/Navbar';
 
 class App extends Component {
   state = {
@@ -34,10 +34,15 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <CitySearch updateEvents={this.updateEvents} />
-        <NumberOfEvents updateEvents={this.updateEvents} />
-        <EventList events={this.state.events} />
+      <div>
+        <Navbar bg="light" className="brand">
+          Meetup Api
+        </Navbar>
+        <div className="App container-background">
+          <CitySearch updateEvents={this.updateEvents} />
+          <NumberOfEvents updateEvents={this.updateEvents} />
+          <EventList events={this.state.events} />
+        </div>
       </div>
     );
   }

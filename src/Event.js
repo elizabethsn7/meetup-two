@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Container from 'react-bootstrap/Container';
+import Button from 'react-bootstrap/Button';
 
 class Event extends Component {
   state = {
@@ -17,26 +19,28 @@ class Event extends Component {
   render() {
     const showDetails = this.state.showDetails;
     return (
-      <div className="Event">
-        <div className="detailsOverview">
-          <p className="date">Date: {this.props.event.local_date}</p>
-          <p className="time">Time: {this.props.event.local_time}</p>
-          <p className="name">Event Name: {this.props.event.name}</p>
-          <p className="attendeeNumber">
-            Number Attending: {this.props.event.yes_rsvp_count}
-          </p>
-          <button
-            className="details-btn"
-            onClick={() => this.handleShowDetails()}>
-            More Details
-          </button>
-        </div>
-        {showDetails && (
-          <div className="expandedDetails">
-            <p className="description">{this.props.event.description}</p>
+      <Container>
+        <div className="Event">
+          <div className="detailsOverview">
+            <p className="name">Event: {this.props.event.name}</p>
+            <p className="date">Date: {this.props.event.local_date}</p>
+            <p className="time">Time: {this.props.event.local_time}</p>
+            <p className="attendeeNumber">
+              Number Attending: {this.props.event.yes_rsvp_count}
+            </p>
+            <Button
+              className="btn details-btn"
+              onClick={() => this.handleShowDetails()}>
+              More Details
+            </Button>
           </div>
-        )}
-      </div>
+          {showDetails && (
+            <div className="expandedDetails">
+              <p className="description">{this.props.event.description}</p>
+            </div>
+          )}
+        </div>
+      </Container>
     );
   }
 }
