@@ -1,6 +1,5 @@
 .App {
-  text-align: center;
-  padding: 2% 5%;
+  background-color: #f8f9fa;
 }
 
 .App * {
@@ -10,20 +9,22 @@
 .Container {
   justify-content: flex-start;
 }
-.container-background {
-  background-color: #2d2d2d;
-}
 
 ul {
   padding: 0;
   list-style: none;
 }
 
+/*  */
+
 .brand {
+  text-align: center;
   color: #e63070;
+  background-color: #fff;
   font-size: 2.25em;
   font-family: 'Pacifico';
-  margin: 10px;
+  padding: 2% 5%;
+  margin: 10px 0px;
   justify-content: center !important;
 }
 

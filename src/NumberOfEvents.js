@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import Container from 'react-bootstrap/Container';
 
 class NumberOfEvents extends Component {
   state = {
-    number: 10
+    number: 32
   };
 
   handleInputChanged = event => {
@@ -10,17 +11,20 @@ class NumberOfEvents extends Component {
     this.setState({ number: value });
     this.props.updateEvents(null, null, value);
   };
-
   render() {
     return (
       <div className="NumberOfEvents">
-        <input
-          type="number"
-          className="eventsShown"
-          placeholder="Number of events"
-          value={this.state.number}
-          onChange={this.handleInputChanged}
-        />
+        <Container>
+          <span>Show</span>
+          <input
+            type="number"
+            className="eventsShown"
+            placeholder="32"
+            value={this.state.number}
+            onChange={this.handleInputChanged}
+          />
+          <span>Results</span>
+        </Container>
       </div>
     );
   }

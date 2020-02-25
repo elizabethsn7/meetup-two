@@ -43,7 +43,9 @@ async function getEvents(lat, lon, page) {
   if (window.location.href.startsWith('http://localhost')) {
     return mockEvents.events;
   }
+
   const token = await getAccessToken();
+
   if (token) {
     let url =
       'https://api.meetup.com/find/upcoming_events?&sign=true&photo-host=public' +
@@ -54,35 +56,15 @@ async function getEvents(lat, lon, page) {
       url += '&lat=' + lat + '&lon=' + lon;
     }
     if (page) {
-      url += '&page' + page;
+      url += '&page=' + page;
+    }
+    if (lat && lon && page) {
+      url += '&lat=' + lat + '&lon=' + lon + '&page=' + page;
     }
     const result = await axios.get(url);
-    return result.data.events;
+    const events = result.data.events;
+    return events;
   }
-  return [];
-}
-
-async function getAccessToken() {
-  const accessToken = localStorage.getItem('access_token');
-  if (!accessToken) {
-    const searchParams = new URLSearchParams(window.location.search);
-    const code = searchParams.get('code');
-
-    if (!code) {
-      window.location.href =
-        'https://secure.meetup.com/oauth2/authorize?client_id=3jsm2toi92h8a08o038b2o1hh1&response_type=code&redirect_uri=https://elizabethsn7.github.io/meetup-two/';
-      return null;
-    }
-    return getOrRenewAccessToken('get', code);
-  }
-  const lastSavedTime = localStorage.getItem('last_saved_time');
-
-  if (accessToken && Date.now() - lastSavedTime < 3600000) {
-    return accessToken;
-  }
-
-  const refreshToken = localStorage.getItem('refresh_token');
-  return getOrRenewAccessToken('renew', refreshToken);
 }
 
 async function getOrRenewAccessToken(type, key) {
@@ -110,4 +92,28 @@ async function getOrRenewAccessToken(type, key) {
   // Return the access_token
   return tokenInfo.data.access_token;
 }
+
+async function getAccessToken() {
+  const accessToken = localStorage.getItem('access_token');
+  if (!accessToken) {
+    const searchParams = new URLSearchParams(window.location.search);
+    const code = searchParams.get('code');
+
+    if (!code) {
+      window.location.href =
+        'https://secure.meetup.com/oauth2/authorize?client_id=3jsm2toi92h8a08o038b2o1hh1&response_type=code&redirect_uri=https://elizabethsn7.github.io/meetup-two/';
+      return null;
+    }
+    return getOrRenewAccessToken('get', code);
+  }
+  const lastSavedTime = localStorage.getItem('last_saved_time');
+
+  if (accessToken && Date.now() - lastSavedTime < 3600000) {
+    return accessToken;
+  }
+
+  const refreshToken = localStorage.getItem('refresh_token');
+  return getOrRenewAccessToken('renew', refreshToken);
+}
+
 export { getSuggestions, getEvents };

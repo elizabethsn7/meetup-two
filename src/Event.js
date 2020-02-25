@@ -17,16 +17,16 @@ class Event extends Component {
   };
 
   render() {
-    const showDetails = this.state.showDetails;
+    const { event } = this.props;
     return (
       <Container>
         <div className="Event">
           <div className="detailsOverview">
-            <p className="name">Event: {this.props.event.name}</p>
-            <p className="date">Date: {this.props.event.local_date}</p>
-            <p className="time">Time: {this.props.event.local_time}</p>
+            <p className="name">Event: {event.name}</p>
+            <p className="date">Date: {event.local_date}</p>
+            <p className="time">Time: {event.local_time}</p>
             <p className="attendeeNumber">
-              Number Attending: {this.props.event.yes_rsvp_count}
+              Number Attending: {event.yes_rsvp_count}
             </p>
             <Button
               className="btn details-btn"
@@ -34,9 +34,9 @@ class Event extends Component {
               More Details
             </Button>
           </div>
-          {showDetails && (
+          {this.state.showDetails && (
             <div className="expandedDetails">
-              <p className="description">{this.props.event.description}</p>
+              <p className="description">{event.description}</p>
             </div>
           )}
         </div>
