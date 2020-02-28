@@ -54,13 +54,11 @@ describe('<Event /> component', () => {
     expect(EventWrapper.find('.Event')).toHaveLength(1);
   });
 
-  test('test detailsOverview exist ', () => {
-    expect(
-      EventWrapper.find('.Event .detailsOverview').children()
-    ).toHaveLength(5);
+  test('test event overview exist ', () => {
+    expect(EventWrapper.find('.Event').children()).toHaveLength(6);
   });
 
-  test('render detailsOverview', () => {
+  test('render Event', () => {
     EventWrapper.setState({
       showDetails: true
     });
@@ -71,7 +69,7 @@ describe('<Event /> component', () => {
     EventWrapper.setState({
       showDetails: false
     });
-    EventWrapper.find('.detailsOverview Button').simulate('click');
+    EventWrapper.find('Button').simulate('click');
     expect(EventWrapper.state('showDetails')).toBe(true);
   });
 
