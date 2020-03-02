@@ -17,6 +17,7 @@ class App extends Component {
   componentDidMount() {
     this.updateEvents();
   }
+
   updateEvents = (lat, lon, page) => {
     if (lat && lon) {
       getEvents(lat, lon, this.state.page).then(events =>
@@ -39,9 +40,7 @@ class App extends Component {
         <Navbar className="brand">Meetup Api</Navbar>
         <Container>
           <CitySearch updateEvents={this.updateEvents} />
-          <NumberOfEvents updateEvents={this.updateEvents}>
-            <p>"How many events would you like to see?"</p>
-          </NumberOfEvents>
+          <NumberOfEvents updateEvents={this.updateEvents} />
           <EventList events={this.state.events} />
         </Container>
       </div>

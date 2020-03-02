@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Container from 'react-bootstrap/Container';
+import App from './App';
 
 class NumberOfEvents extends Component {
   state = {
@@ -9,6 +10,7 @@ class NumberOfEvents extends Component {
   handleInputChanged = event => {
     const value = event.target.value;
     this.setState({ number: value });
+    this.props.updateEvents(null, null, value);
   };
   render() {
     return (

@@ -21,25 +21,27 @@ class Event extends Component {
     return (
       <Container>
         <div className="Event">
-          <p className="name">Event: {event.name}</p>
-          <p className="date">Date: {event.local_date}</p>
-          <p className="time">Time: {event.local_time}</p>
-          <p className="attendeeNumber">
-            Number Attending: {event.yes_rsvp_count}
-          </p>
-          <div className="expandedDetails">
-            {this.state.showDetails && (
+          <div className="detailsOverview">
+            <p className="eventName">Event: {event.name}</p>
+            <p className="date">Date: {event.local_date}</p>
+            <p className="time">Time: {event.local_time}</p>
+            <p className="attendeeNumber">
+              Number Attending: {event.yes_rsvp_count}
+            </p>
+            <Button
+              className="btn details-btn"
+              onClick={() => this.handleShowDetails()}>
+              More Details
+            </Button>
+          </div>
+          {this.state.showDetails && (
+            <div className="expandedDetails">
               <p
                 className="description"
                 dangerouslySetInnerHTML={{ __html: event.description }}
               />
-            )}
-          </div>
-          <Button
-            className="btn details-btn"
-            onClick={() => this.handleShowDetails()}>
-            More Details
-          </Button>
+            </div>
+          )}
         </div>
       </Container>
     );
