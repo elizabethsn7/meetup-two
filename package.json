@@ -7,6 +7,8 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "atatus-js": "^4.0.4",
+    "atatus-spa": "^4.0.4",
     "axios": "^0.19.2",
     "bootstrap": "^4.4.1",
     "fsevents": "^2.1.2",
