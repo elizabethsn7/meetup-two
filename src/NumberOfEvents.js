@@ -16,10 +16,6 @@ class NumberOfEvents extends Component {
       this.setState({
         infoText: 'Please enter a number of 1 or greater'
       });
-    } else if (value > 74) {
-      this.setState({
-        infoText: "Whoa Nelly, that's a lot of scrolling you're gonna do!"
-      });
     } else {
       this.setState({
         infoText: ''

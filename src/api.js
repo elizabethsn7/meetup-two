@@ -44,6 +44,11 @@ async function getEvents(lat, lon, page) {
     return mockEvents.events;
   }
 
+  if (!navigator.onLine) {
+    const events = localStorage.getItem('lastEvents');
+    return JSON.parse(events);
+  }
+
   const token = await getAccessToken();
 
   if (token) {
@@ -63,6 +68,11 @@ async function getEvents(lat, lon, page) {
     }
     const result = await axios.get(url);
     const events = result.data.events;
+    if (events.length) {
+      // Check if the events exist
+      // The JSON.stringify() function will convert the list into a string, allowing it to be stored in localStorage. It will then need to be parsed later using the JSON.parse() function when it’s loaded from localStorage. The (stringified) list is stored under the key lastEvents.
+      localStorage.setItem('lastEvents', JSON.stringify(events));
+    }
     return events;
   }
 }

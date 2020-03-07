@@ -13,7 +13,6 @@ class CitySearch extends Component {
     this.setState({ query: value });
     getSuggestions(value).then(suggestions => {
       this.setState({ suggestions });
-
       if (value && suggestions.length === 0) {
         this.setState({
           infoText:

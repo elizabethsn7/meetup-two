@@ -23,27 +23,30 @@ class Alert extends Component {
 class InfoAlert extends Alert {
   constructor(props) {
     super(props);
-    this.color = 'blue';
+    this.color = '#b52424';
   }
 }
 
 class ErrorAlert extends Alert {
   constructor(props) {
     super(props);
-    this.color = 'red';
+    this.color = '#b52424';
   }
 }
 
 class WarningAlert extends Alert {
   constructor(props) {
     super(props);
-    this.color = 'orange';
+    this.color = '#fff';
   }
 
   getStyle = () => {
     return {
       color: this.color,
-      fontStyle: 'italic'
+      fontStyle: 'italic',
+      fontSize: '1.5em',
+      backgroundColor: '#e63070',
+      textAlign: 'center'
     };
   };
 }
