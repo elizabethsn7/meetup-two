@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
 import { ErrorAlert } from './Alert';
 
 class NumberOfEvents extends Component {
@@ -28,15 +29,17 @@ class NumberOfEvents extends Component {
       <div className="NumberOfEvents">
         <ErrorAlert text={this.state.infoText} />
         <Container>
-          <span>Show</span>
-          <input
-            type="number"
-            className="eventsShown"
-            placeholder="32"
-            value={this.state.number}
-            onChange={this.handleInputChanged}
-          />
-          <span>Results</span>
+          <Row className="eventListInput">
+            <span>Show</span>
+            <input
+              type="number"
+              className="eventsShown"
+              placeholder="32"
+              value={this.state.number}
+              onChange={this.handleInputChanged}
+            />
+            <span>Results</span>
+          </Row>
         </Container>
       </div>
     );

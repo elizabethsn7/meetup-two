@@ -129,6 +129,18 @@ input[type='number'] {
   font-size: 18px;
   font-weight: 600;
 }
+.eventListInput {
+  justify-content: center;
+}
+.pieChart {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 10px;
+  width: 400px;
+  height: 400px;
+  background-color: #fff;
+}
 
 .group-name {
   text-transform: uppercase;
