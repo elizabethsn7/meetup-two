@@ -9,7 +9,7 @@
     "@testing-library/user-event": "^7.1.2",
     "atatus-js": "^4.0.4",
     "atatus-spa": "^4.0.4",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "bootstrap": "^4.4.1",
     "fsevents": "^2.1.2",
     "moment": "^2.24.0",
